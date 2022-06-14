@@ -21,16 +21,17 @@ from supply import router, api, viewsets
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('supply.router')),
-    #('api-auth/', include('rest_framework.urls')),  # rest_framework authentication
     path('api/', include(router.urlpatterns)),
     path('index/', viewsets.index),
+
     path('materials_list/', viewsets.materials_list),
-    path('feedstock_list/', viewsets.feedstock_list),
     path('create_material/', viewsets.create_material),
     path('update_material/', viewsets.update_material),
     path('delete_material/', viewsets.delete_material),
 
-    #path('api/material/expenses_by_material/<str:name>/', api.expenses_by_material),
-    #path('api/feedstock/expenses_by_feedstock/<str:name>/', api.expenses_by_feedstock),
-    #path('search/', api.snippet_list)
+    path('feedstock_list/', viewsets.feedstock_list),
+    path('create_feedstock/', viewsets.create_feedstock),
+    path('update_feedstock/', viewsets.update_feedstock),
+    path('delete_feedstock/', viewsets.delete_feedstock),
+
 ]

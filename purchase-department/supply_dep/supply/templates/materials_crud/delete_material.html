@@ -10,17 +10,14 @@
 </head>
 <body>
 
-    <form id="create-mat-form" method="post" v-on:submit.prevent="submitForm" >
+    <form id="delete-mat-form" method="post" v-on:submit.prevent="submitForm" >
         {% csrf_token %}
-        <input type="text" v-model="material.name" name="name" placeholder="Название материала" />
-        <input type="number" v-model="material.amount" name="amount" placeholder="Количество материала" />
-        <input type="number" v-model="material.cost" name="cost" placeholder="Цена материала" />
-        <input type="number" v-model="material.general_expenses" name="general_expenses" placeholder="Общие расходы" />
-        <input type="submit" v-on:click="submitForm()" value="Добавить" />
+        <input type="number"  name="id" placeholder="ID материала" />
+        <input type="submit" v-on:click="submitForm()" value="Удалить" />
     </form>
 
 
 
-    <script src="/static/mat_crud/create_material.js"></script>
+    <script src="/static/mat_crud/delete_material.js"></script>
 </body>
 </html>

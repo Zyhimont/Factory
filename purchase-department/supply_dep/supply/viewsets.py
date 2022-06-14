@@ -72,8 +72,13 @@ def update_material(request):
 def delete_material(request):
     return render(request, 'materials_crud/delete_material.html')
 
-#class SupplyViewset(generics.ListAPIView):
-#    queryset = Supply.objects.all()
-#    serializer_class = SupplySerializer
-#    filter_backends = [filters.SearchFilter]
-#    search_fields = ['user_id']
+@csrf_exempt
+def create_feedstock(request):
+    return render(request, 'feedstock_crud/create_feedstock.html')
+
+@csrf_exempt
+def update_feedstock(request):
+    return render(request, 'feedstock_crud/update_feedstock.html')
+
+def delete_feedstock(request):
+    return render(request, 'feedstock_crud/delete_feedstock.html')
